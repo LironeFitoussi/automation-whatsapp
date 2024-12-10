@@ -1,0 +1,73 @@
+{
+    "info": {
+      "name": "Phone Numbers API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "/process",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "file",
+                "type": "file",
+                "src": ""
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:5000/process",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["process"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "/validate",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/validate",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["validate"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "/send",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"message\": \"Hello, this is a test message!\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/send",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["send"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
