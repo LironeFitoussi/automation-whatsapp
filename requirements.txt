@@ -1,6 +1,6 @@
-Flask==2.3.2
-pymongo==4.3.2
-pandas==2.1.1
-phonenumbers==8.13.16
-selenium==4.12.0
-webdriver-manager==4.0.0
+Flask
+pymongo
+pandas
+phonenumbers
+selenium
+webdriver-manager
