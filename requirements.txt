@@ -1,6 +1,6 @@
-Flask
-pymongo
-pandas
-phonenumbers
-selenium
-webdriver-manager
+Flask==*
+pymongo==*
+pandas==*
+phonenumbers==*
+selenium==*
+webdriver-manager==*
