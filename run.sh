@@ -5,6 +5,17 @@ echo "Installing system dependencies..."
 sudo yum update -y
 sudo yum install -y python3 python3-pip nss xorg-x11-server-Xvfb unzip wget
 
+# Remove any existing pip installations
+echo "Removing existing pip installations..."
+sudo pip3 uninstall -y pip
+sudo rm -rf /usr/local/lib/python3.6/site-packages/pip*
+
+# Install pip
+echo "Installing pip..."
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+rm get-pip.py
+
 # Install Python dependencies from requirements.txt
 echo "Installing Python dependencies..."
 pip3 install -r requirements.txt
