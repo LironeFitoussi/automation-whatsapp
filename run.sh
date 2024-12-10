@@ -5,16 +5,15 @@ echo "Installing system dependencies..."
 sudo yum update -y
 sudo yum install -y python3 python3-pip nss xorg-x11-server-Xvfb unzip wget
 
-# Remove any existing pip installations
-echo "Removing existing pip installations..."
-sudo pip3 uninstall -y pip
-sudo rm -rf /usr/local/lib/python3.6/site-packages/pip*
+# Remove all existing pip packages
+echo "Removing all existing pip packages..."
+pip3 freeze > installed_packages.txt
+pip3 uninstall -y -r installed_packages.txt
+rm -f installed_packages.txt
 
-# Install pip
-echo "Installing pip..."
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
-rm get-pip.py
+# Upgrade pip to the latest version
+echo "Upgrading pip..."
+pip3 install --upgrade pip
 
 # Install Python dependencies from requirements.txt
 echo "Installing Python dependencies..."
@@ -30,7 +29,7 @@ then
     echo "Google Chrome not found. Installing..."
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
     sudo yum install -y ./google-chrome-stable_current_x86_64.rpm
-    rm google-chrome-stable_current_x86_64.rpm
+    rm -f google-chrome-stable_current_x86_64.rpm
 else
     echo "Google Chrome is already installed."
 fi
